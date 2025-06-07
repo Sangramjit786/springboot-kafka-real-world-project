@@ -20,8 +20,8 @@ public class KafkaDatabaseConsumer {
 
 
     @KafkaListener(
-            topics = "wikimedia_recentchange",
-            groupId = "myGroup"
+            topics = "${spring.kafka.topic.name}",
+            groupId = "${spring.kafka.consumer.group-id}"
     )
     public void consume(String eventMessage){
 
